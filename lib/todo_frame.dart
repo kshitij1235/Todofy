@@ -5,7 +5,7 @@ class TodoFrame extends StatelessWidget {
   final bool taskCompleted;
   final Function(bool?)? onChanged;
 
-  TodoFrame({
+  const TodoFrame({
     super.key,
     required this.taskName,
     required this.taskCompleted,
