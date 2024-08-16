@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todfy/pages/create_task.dart';
 import 'package:todfy/services/database.dart';
-import 'package:todfy/utils/NoTask.dart';
+import 'package:todfy/utils/no_task.dart';
 import 'package:todfy/utils/todo_frame.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -38,7 +38,9 @@ class _HomepageState extends State<Homepage> {
 
   void onSave() {
     setState(() {
+      if (_controller.text !=""){
       db.todfyList.add([_controller.text, false]);
+      }
     });
     _controller.clear();
     db.updateTask();

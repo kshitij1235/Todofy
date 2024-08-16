@@ -24,6 +24,8 @@ class MyDialog extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            MaterialButton(onPressed: onCancel,
+          child: Text("X"),),
             TextField(
               controller: controller,
               decoration: InputDecoration(
@@ -54,10 +56,10 @@ class MyDialog extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                ButtonsWidget(buttonName: "Save", onPressed: onsave),
-                SizedBox(width: 10),
-                ButtonsWidget(buttonName: "Cancel", onPressed: onCancel),
+              children: [  
+                ButtonsWidget(buttonName: "S A V E", 
+                
+                onPressed: onsave),
               ],
             ),
           ],
