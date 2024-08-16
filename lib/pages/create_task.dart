@@ -18,48 +18,71 @@ class MyDialog extends StatelessWidget {
     return AlertDialog(
       backgroundColor: Colors.white,
       content: Container(
-        height: 200,
+        height: 190,
         width: 400,
         color: Colors.white,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            MaterialButton(onPressed: onCancel,
-          child: Text("X"),),
-            TextField(
-              controller: controller,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.black, // Border color
-                    width: 2.0, // Border width
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            
+              children: [
+                Text("C R E A T E   T A S K"),
+                Expanded(
+                    child:
+                        Container()), // Empty space to push the icon to the right
+                IconButton(
+                  icon: Icon(Icons.close, color: Colors.black),
+                  onPressed: onCancel,
+                ),
+              ],
+            ),
+            SizedBox(
+                height: 10.0), // Space between the close icon and the TextField
+            Expanded(
+              child: TextField(
+                controller: controller,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.grey.shade500, // Border color
+                      width: 2.0, // Border width
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.grey
+                          .shade500, // Border color when enabled but not focused
+                      width: 1.0, // Border width
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.grey.shade300, // Border color when focused
+                      width: 1.0, // Border width
+                    ),
+                  ),
+                  hintText: '${([
+                        'Set a Meeting',
+                        'Remind me to get keys',
+                        'Do some assignments',
+                        'Make Coffee',
+                        'Do Homework'
+                      ]..shuffle()).first} ..',
+                  hintStyle: TextStyle(
+                    color: Colors.grey, // Change this to your desired color
                   ),
                 ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.black, // Border color when enabled but not focused
-                    width: 1.0, // Border width
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.black, // Border color when focused
-                    width: 1.0, // Border width
-                  ),
-                ),
-                hintText: ([
-                  'Set a Meeting..',
-                  'Remind me to get keys..',
-                  'Do some assignments..'
-                ]..shuffle()).first,
               ),
             ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: [  
-                ButtonsWidget(buttonName: "S A V E", 
-                
-                onPressed: onsave),
+              children: [
+                ButtonsWidget(
+                  buttonName: "S A V E",
+                  onPressed: onsave,
+                ),
               ],
             ),
           ],

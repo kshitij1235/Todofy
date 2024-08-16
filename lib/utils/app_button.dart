@@ -23,11 +23,26 @@ class _ButtonsWidgetState extends State<ButtonsWidget> {
       child: MouseRegion(
         onEnter: (_) => setState(() => _isHovered = true),
         onExit: (_) => setState(() => _isHovered = false),
-        child: MaterialButton(
-          onPressed: widget.onPressed,
-          child: Text(widget.buttonName),
-          color: _isHovered ? Colors.grey[300] : Colors.white,  // Change color on hover
-          padding: EdgeInsets.symmetric(vertical: 16.0),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(
+              color: _isHovered
+                  ? Colors.black
+                  : Colors.grey, // Border color changes on hover
+              width: 2.0, // Border width
+            ),
+          ),
+          child: MaterialButton(
+            onPressed: widget.onPressed,
+            child: Text(
+              widget.buttonName,
+              selectionColor: Colors.white,
+            ),
+            color: _isHovered
+                ? Colors.grey[300]
+                : Colors.white, // Button color changes on hover
+            padding: EdgeInsets.symmetric(vertical: 16.0),
+          ),
         ),
       ),
     );

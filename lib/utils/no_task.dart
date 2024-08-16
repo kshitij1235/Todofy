@@ -14,15 +14,15 @@ class NoTask extends StatelessWidget {
         children: [
           Icon(
             Icons.numbers_sharp,
-            color: Colors.red,
+            color: Color.fromARGB(255, 228, 124, 124),
             size: 48.0, // Larger size for emphasis
           ),
-          SizedBox(height: 16.0), // Spacing between icon and text
+          SizedBox(height: 16.0), 
           Text(
             "N O   T A S K   H E R E",
             style: TextStyle(
-              color: Colors.black,
-              fontSize: 20.0, // Larger font size for emphasis
+              color: Color.fromARGB(255, 158, 158, 158),
+              fontSize: 20.0, 
             ),
           ),
         ],

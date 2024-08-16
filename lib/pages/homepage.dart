@@ -89,7 +89,7 @@ class _HomepageState extends State<Homepage> {
             : ListView.builder(
                 itemCount: db.todfyList.length,
                 itemBuilder: (context, index) {
-                  return todfyFrame(
+                  return TodfyFrame(
                     taskName: db.todfyList[index][0],
                     taskCompleted: db.todfyList[index][1],
                     onChanged: (value) => onChanged(value, index),
