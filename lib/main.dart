@@ -3,14 +3,13 @@ import 'package:todfy/pages/homepage.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
+  
   String? errorMessage;
 
   try {
     // Initialize Hive and open the box before running the app
     await Hive.initFlutter();
-    var box = await Hive.openBox("todfy");
+    var box = await Hive.openBox("todo");
   } catch (e) {
     errorMessage = e.toString();  // Capture the error message
   }

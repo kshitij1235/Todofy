@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class NoTask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -14,7 +14,7 @@ class NoTask extends StatelessWidget {
           ),
           SizedBox(height: 16.0), // Spacing between icon and text
           Text(
-            "No task here",
+            "N O  T A S K  H E R E",
             style: TextStyle(
               color: Colors.black,
               fontSize: 20.0, // Larger font size for emphasis
